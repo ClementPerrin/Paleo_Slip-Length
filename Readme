@@ -1,0 +1,23 @@
+These three Matlab® programs are designed to find the best set of consecutive earthquakes that fits a distribution of L (horizontal distance, in km) and D (cumulative offsets, in m) measurements along a fault. Measurement weights are stored in W. The programs work as follows :
+
+- fit_rand_tri.m generates a random set of Nt triangles ;
+- N_fit_rand_tri.m runs the previous program Nr times and outputs the set of triangles that achieves the best weighted rms among them ;
+- M_N_fit_rand_tri runs the previous program Nl times and outputs the set of triangles averaged from the Nl best triangles.
+
+You need to run only the M_N_fit_rand_tri.m program, the two other programs being called from within this program. You may however run the two other programs independently.
+
+The Auxiliary folder contains 4 small Matlab® functions needed by the main three programs (aboveLine.m, create_weights.m, dist2triangle.m, weight_rms.m) and 2 Matlab® functions that can be used before (merge_dataset.m) and after (stat_triangles.m) the main three programs. The first one merges two datasets of different quality factors. The second one computes mean and standard deviation of triangles geometries.
+
+VERY IMPORTANT :
+
+These programs rely on several functions contained in the very useful matGeom toolbox, written by David Legland 
+
+https://www6.angers-nantes.inra.fr/bia_eng/Home/Staff-members/L/LEGLAND-David
+
+It can be found at :
+
+https://github.com/mattools/matGeom
+
+This toolbox and the Auxiliary folder must obviously be on your Matlab® path.
+
+Yves Gaudemer - IPGP - 2019/12/27
